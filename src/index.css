@@ -1,0 +1,306 @@
+/* ==========================================================================
+   الأخوية | لخدمة ضيوف الرحمن — Design System & Global Styles
+   Minimalist, Elegant, Calm, Authentic Arabic Luxury (Moroccan Market)
+   ========================================================================== */
+
+:root {
+  /* Brand Palette derived directly from the Official Emblem */
+  --color-black: #151719;
+  --color-black-deep: #0E1012;
+  --color-charcoal: #151719;
+  --color-charcoal-light: #202327;
+  --color-border-dark: #2A2E35;
+
+  /* Muted Champagne Gold & Warm Accents */
+  --color-gold: #B99A55;
+  --color-gold-hover: #C7AA67;
+  --color-gold-light: #E9E0D0; /* soft sand */
+  --color-gold-pale: #F8F5EE;  /* warm ivory */
+  --color-gold-dark: #8C733B;
+  --gold-gradient: linear-gradient(135deg, #CFBA84 0%, #B99A55 55%, #8C733B 100%);
+  --gold-glow: 0 4px 18px rgba(185, 154, 85, 0.20);
+  --gold-border: rgba(185, 154, 85, 0.35);
+
+  /* Warm Ivory Base & Surfaces */
+  --color-bg-base: #F8F5EE;
+  --color-surface-card: #FFFFFF;
+  --color-surface-subtle: #F3EFE6;
+  --color-surface-tint: #E9E0D0;
+  --color-border: #E9E0D0; /* soft sand */
+  --color-border-light: #EFE9DE;
+
+  /* High Legibility Slate & Charcoal Typography */
+  --color-text-primary: #151719;
+  --color-text-secondary: #51545C;
+  --color-text-tertiary: #7D828C;
+  --color-text-white: #FFFFFF;
+
+  /* Functional Status */
+  --color-success: #2A7A38;
+  --color-success-bg: #EAF5EC;
+  --color-info: #1976D2;
+  --color-info-bg: #E3F2FD;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+
+  /* Typography Scales */
+  --font-sans: 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Amiri', serif;
+
+  /* Shadows & Curves */
+  --shadow-sm: 0 1px 3px rgba(21, 23, 25, 0.04);
+  --shadow-md: 0 4px 14px rgba(21, 23, 25, 0.06);
+  --shadow-lg: 0 10px 30px rgba(21, 23, 25, 0.08);
+  --shadow-floating: 0 20px 40px rgba(21, 23, 25, 0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  direction: rtl;
+  text-align: right;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.container-narrow {
+  max-width: 960px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D2C4;
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Common Components & Micro-styles */
+.gold-text-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-gold-pale);
+  color: var(--color-gold-dark);
+  border: 1px solid var(--color-gold-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-charcoal);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-border-dark);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gold-gradient);
+  color: #0F1114;
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--gold-glow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  font-size: 15px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 168, 105, 0.35);
+  filter: brightness(1.04);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  font-size: 15px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark);
+  background-color: var(--color-gold-pale);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-charcoal);
+  color: #FFFFFF;
+  border: 1px solid var(--color-border-dark);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-dark:hover {
+  background: #111316;
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+}
+
+/* Section Header Standards */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Card Surface */
+.luxury-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.luxury-card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
